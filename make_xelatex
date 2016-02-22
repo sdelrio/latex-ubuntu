@@ -1,0 +1,8 @@
+#!/bin/sh
+
+xelatex -output-directory /latex/build "$1" && xelatex -output-directory /latex/build "$1" || exit 1
+
+for extension in log aux out bcf xml; do
+    echo rm -rf "/latex/build/${1%.*}.${extension}"
+    rm -rf "/latex/build/${1%.*}.${extension}"
+done

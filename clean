@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for extension in log aux out bcf xml; do
+    echo rm -rf ./build/*.$extension
+    rm -rf ./build/*.$extension
+done

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+pdflatex "$1" && pdflatex "$1" || exit 1
+
+for extension in log aux out; do
+    echo rm -rf "/latex/build/${1%.*}.${extension}"
+    rm -rf "/latex/build/${1%.*}.${extension}"
+done
